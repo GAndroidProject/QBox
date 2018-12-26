@@ -90,7 +90,9 @@ public class ClipPagerTitleView extends View implements IMeasurablePagerTitleVie
         canvas.drawText(mText, x, y, mPaint);
 
         // 画clip层
-        canvas.save(Canvas.CLIP_SAVE_FLAG);
+//       canvas.save(Canvas.CLIP_SAVE_FLAG);
+//        Canvas api 28后改写成这样的。
+        canvas.save();
         if (mLeftToRight) {
             canvas.clipRect(0, 0, getWidth() * mClipPercent, getHeight());
         } else {
